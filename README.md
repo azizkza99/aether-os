@@ -1,36 +1,61 @@
-# 🌌 Aether OS // Neural Command Center
+# Aether OS
 
-A modern, web-based operating system simulation and interactive portfolio dashboard built with **React**, **Tailwind CSS**, and **GSAP**. Aether OS combines a retro-futuristic terminal shell, a virtual file system, dynamic canvas particle animations, and multi-theme customization into a seamless single-page application.
+Aether OS is an interactive, browser-only operating-system simulation built as a frontend case study. It combines a command parser, an in-memory file tree, a local buffer editor, generated telemetry, multiple visual themes, Web Audio feedback, and a responsive canvas mesh.
 
-![Aether OS Preview](https://img.shields.io/badge/Status-Stable%20Release-cyan?style=for-the-badge&logo=react)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+**Live demo:** [aether-os-seven-kappa.vercel.app](https://aether-os-seven-kappa.vercel.app/)
 
----
+## Trust boundary
 
-## 🚀 Key Features
+Aether is a simulation. It does not open a real shell, inspect the visitor's device, read local files, access a network, or report real CPU, memory, encryption, or latency values. File edits live only in React state for the current browser session; the selected color theme is the only value saved in `localStorage`.
 
-* **Interactive Shell & Terminal**: Fully functional command-line interface supporting file system navigation (`ls`, `cd`, `cat`, `mkdir`, `touch`, `rm`), tab-autocomplete, command history (Arrow Up/Down), and custom shortcuts (`matrix`, `coffee`, `sudo`, `pulse`).
-* **Persistent Themes**: Custom theme engine supporting multiple cyberpunk aesthetics (**Cyan Cyber**, **Matrix Green**, **Amber Terminal**, **Crimson Red**) with instant state preservation via `localStorage`.
-* **Neural Editor**: Integrated text buffer management allowing users to open, view, edit, and save virtual files directly from the terminal or visual editor tab.
-* **Dynamic Canvas Background**: Advanced HTML5 canvas engine rendering interactive neural particle meshes, mouse-following node connections, and an alternate Matrix digital rain mode.
-* **Web Audio API Integration**: Procedurally generated auditory feedback for keystrokes and system execution events without relying on external audio assets.
-* **Live System Telemetry**: Real-time simulated monitoring for CPU load, RAM utilization, session uptime, and quantum mesh node latency.
+## Highlights
 
----
+- Terminal-style command parser with history and tab completion.
+- In-memory file navigation and editing (`ls`, `cd`, `cat`, `edit`, `mkdir`, `touch`, `rm`).
+- Four persistent visual themes.
+- Responsive, device-pixel-ratio-aware canvas rendering.
+- Matrix mode, generated telemetry, and optional Web Audio feedback.
+- Keyboard-accessible tabs, explicit labels, live regions, focus states, and reduced-motion support.
+- No analytics, accounts, backend, or data upload.
 
-## 🛠️ Tech Stack
+## Commands
 
-* **Frontend Framework**: React (Vite)
-* **Styling & UI**: Tailwind CSS
-* **Animations**: GSAP (GreenSock Animation Platform)
-* **Audio & Graphics**: Web Audio API, HTML5 Canvas API
+Run `help` inside the demo to see every command. Useful starting points:
 
----
+```text
+status
+ls
+cat user_profile.txt
+edit user_profile.txt
+theme green
+matrix
+pulse
+```
 
-## ⚙️ Getting Started & Installation
+## Tech
 
-To run this project locally on your machine, follow these steps:
+- React 18
+- Vite 5
+- Tailwind CSS 4
+- HTML Canvas API
+- Web Audio API
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/AbdelazizAbuthuraya/aether-os.git
+## Local setup
+
+```bash
+git clone https://github.com/azizkza99/aether-os.git
+cd aether-os
+npm install
+npm run dev
+```
+
+## Quality checks
+
+```bash
+npm run check
+npm audit --omit=dev
+```
+
+## License
+
+[MIT](./LICENSE)

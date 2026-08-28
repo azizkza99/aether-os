@@ -1,16 +1,17 @@
 {
   "name": "aether-os",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "An accessible browser-only operating-system simulation and frontend case study.",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "check": "npm run lint && npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "gsap": "^3.15.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
