@@ -1,9 +1,127 @@
 @import "tailwindcss";
 
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: #020205;
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #030305;
-  color: #ffffff;
   margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #020205;
+  color: #ffffff;
   font-family: system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.skip-link {
+  position: fixed;
+  inset-block-start: 0.75rem;
+  inset-inline-start: 0.75rem;
+  z-index: 100;
+  translate: 0 -180%;
+  border: 1px solid var(--aether-accent);
+  border-radius: 0.5rem;
+  background: #09090b;
+  padding: 0.65rem 0.9rem;
+  color: white;
+  font: 600 0.75rem ui-monospace, monospace;
+  transition: translate 180ms ease;
+}
+
+.skip-link:focus {
+  translate: 0;
+  outline: none;
+}
+
+.aether-soft-button {
+  background: color-mix(in srgb, var(--aether-accent) 10%, transparent);
+  color: var(--aether-accent);
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.aether-soft-button:hover {
+  background: color-mix(in srgb, var(--aether-accent) 18%, transparent);
+  transform: translateY(-1px);
+}
+
+.aether-soft-button:focus-visible {
+  outline: 2px solid var(--aether-accent);
+  outline-offset: 3px;
+}
+
+.quantum-card {
+  animation: card-enter 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.quantum-core-glow {
+  transition:
+    background 500ms ease,
+    opacity 500ms ease;
+}
+
+.quantum-core-glow[data-pulsing="true"] {
+  animation: core-pulse 680ms ease-out;
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes core-pulse {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  45% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.28);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
