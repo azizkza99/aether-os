@@ -1,55 +1,41 @@
 # Aether OS
 
-Aether OS is an interactive, browser-only operating-system simulation built as a frontend case study. It combines a command parser, an in-memory file tree, a local buffer editor, generated telemetry, multiple visual themes, Web Audio feedback, and a responsive canvas mesh.
+An accessible, browser-based operating-system simulation built as a frontend engineering case study.
 
 **Live demo:** [aether-os-seven-kappa.vercel.app](https://aether-os-seven-kappa.vercel.app/)
 
-## Trust boundary
+## Overview
 
-Aether is a simulation. It does not open a real shell, inspect the visitor's device, read local files, access a network, or report real CPU, memory, encryption, or latency values. File edits live only in React state for the current browser session; the selected color theme is the only value saved in `localStorage`.
+Aether OS combines a terminal-style command parser, an in-memory file system, a local text editor, generated telemetry, multiple visual themes, and responsive canvas effects. It is intentionally sandboxed in the browser: it does not access a visitor's device, files, shell, or network.
 
-## Highlights
+## Tech Stack
 
-- Terminal-style command parser with history and tab completion.
-- In-memory file navigation and editing (`ls`, `cd`, `cat`, `edit`, `mkdir`, `touch`, `rm`).
-- Four persistent visual themes.
-- Responsive, device-pixel-ratio-aware canvas rendering.
-- Matrix mode, generated telemetry, and optional Web Audio feedback.
-- Keyboard-accessible tabs, explicit labels, live regions, focus states, and reduced-motion support.
-- No analytics, accounts, backend, or data upload.
-
-## Commands
-
-Run `help` inside the demo to see every command. Useful starting points:
-
-```text
-status
-ls
-cat user_profile.txt
-edit user_profile.txt
-theme green
-matrix
-pulse
-```
-
-## Tech
-
-- React 18
+- React 18 and JavaScript
 - Vite 5
 - Tailwind CSS 4
 - HTML Canvas API
 - Web Audio API
+- ESLint
 
-## Local setup
+## Key Features
+
+- Command history, tab completion, and familiar file commands
+- In-memory navigation and editing with no device access
+- Four persistent visual themes and an optional matrix mode
+- Responsive, device-pixel-ratio-aware canvas rendering
+- Keyboard-accessible controls, live regions, and reduced-motion support
+- Explicit trust boundaries and no analytics, accounts, or data upload
+
+## Setup
 
 ```bash
 git clone https://github.com/azizkza99/aether-os.git
 cd aether-os
-npm install
+npm ci
 npm run dev
 ```
 
-## Quality checks
+## Quality Checks
 
 ```bash
 npm run check
