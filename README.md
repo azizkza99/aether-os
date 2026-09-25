@@ -34,6 +34,8 @@ Aether OS combines a terminal-style command parser, an in-memory file system, a 
 
 ## Setup
 
+Use Node.js 20.19+ or 22.12+.
+
 ```bash
 git clone https://github.com/azizkza99/aether-os.git
 cd aether-os
