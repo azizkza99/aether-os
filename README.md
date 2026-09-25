@@ -11,7 +11,7 @@ Aether OS combines a terminal-style command parser, an in-memory file system, a 
 ## Tech Stack
 
 - React 18 and JavaScript
-- Vite 5
+- Vite 8 and the React plugin 6
 - Tailwind CSS 4
 - HTML Canvas API
 - Web Audio API
