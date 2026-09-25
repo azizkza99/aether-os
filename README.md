@@ -26,6 +26,12 @@ Aether OS combines a terminal-style command parser, an in-memory file system, a 
 - Keyboard-accessible controls, live regions, and reduced-motion support
 - Explicit trust boundaries and no analytics, accounts, or data upload
 
+## Project Structure
+
+- `src/App.jsx` owns the simulated file tree, command parser, editor, and visual effects.
+- `src/index.css` contains the interface styles and responsive layout.
+- `public/favicon.svg` contains the project icon. The editor changes only in-memory session data.
+
 ## Setup
 
 ```bash
